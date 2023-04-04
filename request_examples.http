@@ -1,0 +1,16 @@
+POST http://127.0.0.1:8000/api/v1/visited_links
+Content-Type: application/json
+
+{
+  "links": [
+          "https://ya.ru",
+          "https://ya.ru?q=123",
+          "funbox.ru",
+          "https://stackoverflow.com/questions/11828270/how-to-exit-the-vim-editor"
+    ]
+}
+
+###
+
+GET http://127.0.0.1:8000/api/v1/visited_domains?from=1&to=1980599411
+Content-Type: application/json

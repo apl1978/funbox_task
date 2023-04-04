@@ -22,8 +22,9 @@ class VisitedDomainsView(APIView):
         for path_url in redis_instance.zrangebyscore('path_url_', int(p_from), int(p_to)):
             urls.add(json.loads(path_url)['url'])
 
+        list_urls = list(urls)
         response = {
-            'domains': urls,
+            'domains': list_urls,
             'status': 'ok'
         }
         return Response(response, status=status.HTTP_200_OK)
